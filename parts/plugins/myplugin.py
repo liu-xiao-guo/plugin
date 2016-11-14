@@ -36,7 +36,7 @@ class MyPlugin(snapcraft.BasePlugin):
         return schema
         
     def _copy(self, path_copyto):
-        path = os.path.join(path_copyto, "setup/gui/")
+        path = os.path.join(path_copyto, "meta/hooks/")
         logger.warning("path: %s", path);
         os.makedirs(os.path.dirname(path), exist_ok=True)
         source = self.builddir + "/" + self.options.myprop
@@ -57,7 +57,7 @@ class MyPlugin(snapcraft.BasePlugin):
         # logger.warning("self.project.stage_dir: %s", self.project.stage_dir)
        
         logger.warning("Going to add the needed build packages...")
-        self.build_packages.append('golang-go')
+        # self.build_packages.append('golang-go')
         _dump("options", options)
         _dump("project", project)
         
