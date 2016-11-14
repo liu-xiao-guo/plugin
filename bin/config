@@ -9,4 +9,6 @@ then
 	cat $config_file
 else
 	echo "$config_file not found."
+	echo "Please run the following commmand to generate the file:"
+	echo "sudo snap set plugin username=foo password=bar"
 fi
