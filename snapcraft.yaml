@@ -1,6 +1,6 @@
 name: plugin # you probably want to 'snapcraft register <name>'
 version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
-summary: Single-line elevator pitch for your amazing snap # 79 char long summary
+summary: This is a sample plugin for snapcraft # 79 char long summary
 description: |
   This is a plugin example
 
@@ -13,9 +13,10 @@ apps:
 
 parts:
   my-part:
-    # See 'snapcraft plugins'
+    # This is a custom plugin defined in "parts" dir
     plugin: myplugin
-    # the configure filename
+    # This is the property defined in the plugin. It is a file name
+    # to be used for the congfigure hook
     myprop: configure
     source: .
     

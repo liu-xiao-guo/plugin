@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 
 def _dump(name, obj):
     for attr in dir(obj):
-        # logger.warning("obj.%s = %s", attr, getattr(obj, attr))
         func = getattr(obj, attr, None)
         if func:
             logger.warning("%s.%s = %s",name, attr, func)
@@ -58,8 +57,8 @@ class MyPlugin(snapcraft.BasePlugin):
        
         logger.warning("Going to add the needed build packages...")
         # self.build_packages.append('golang-go')
-        _dump("options", options)
-        _dump("project", project)
+        # _dump("options", options)
+        # _dump("project", project)
         
         logger.warning("build-packages:")
         for pkg in options.build_packages:
@@ -70,10 +69,10 @@ class MyPlugin(snapcraft.BasePlugin):
         super().build()
         logger.warning("build begins ... ")
         
-        # creating a dir under /parts/<part>/build/setup/gui
+        # copy congfigure file to parts/<part>/build/meta/hooks
         self._copy(self.builddir)
         
-        # we need to do the same for the installation dir
+        # copy configure file to parts/<part>/install/meta/hooks  
         self._copy(self.installdir)
        
     def pull(self):
