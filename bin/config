@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "Reading config file at: $SNAP_DATA"
