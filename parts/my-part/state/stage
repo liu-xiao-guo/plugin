@@ -1,6 +1,0 @@
-!StageState
-directories: !!set {meta: null, meta/hooks: null}
-files: !!set {meta/hooks/configure: null}
-project_options: {}
-properties:
-  stage: ['*']
